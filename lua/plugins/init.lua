@@ -29,6 +29,13 @@ local default_plugins = {
   },
 
   {
+    'xeluxee/competitest.nvim',
+    dependencies = 'MunifTanjim/nui.nvim',
+    lazy = false,
+    config = true,
+  },
+
+  {
     "NvChad/base46",
     branch = "v2.0",
     build = function()

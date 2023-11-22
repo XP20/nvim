@@ -173,6 +173,7 @@ local default_plugins = {
     end,
     config = function()
       require "plugins.configs.lspconfig"
+      require "custom.lspconfig"
     end,
   },
 

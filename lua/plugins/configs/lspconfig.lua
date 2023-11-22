@@ -41,14 +41,6 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
-local lspList = {
-  'pyright',
-}
-
-for i, v in ipairs(lspList) do
-  require('lspconfig')[v].setup({})
-end
-
 require("lspconfig").lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,
@@ -70,6 +62,24 @@ require("lspconfig").lua_ls.setup {
       },
     },
   },
+}
+
+require("lspconfig").rust_analyzer.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+
+  root_dir = function(_, _) return '/usr/bin' end,
+  -- root_dir = vim.fs.dirname(vim.fs.find(function(name, _)
+  --   return name:match('.*%.rs$')
+  -- end, {limit = math.huge, type = 'file'})[0]),
+
+  settings = {
+    ['rust-analyzer'] = {
+      checkOnSave = {
+        command = 'clippy',
+      },
+    },
+  }
 }
 
 return M

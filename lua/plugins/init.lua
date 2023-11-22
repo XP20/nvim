@@ -32,7 +32,7 @@ local default_plugins = {
     'xeluxee/competitest.nvim',
     dependencies = 'MunifTanjim/nui.nvim',
     lazy = false,
-    config = true,
+    opts = {},
   },
 
   {

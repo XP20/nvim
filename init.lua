@@ -19,3 +19,6 @@ end
 dofile(vim.g.base46_cache .. "defaults")
 vim.opt.rtp:prepend(lazypath)
 require "plugins"
+
+vim.g.loaded_python3_provider = nil
+vim.g.python3_host_prog = '/usr/bin/python3'

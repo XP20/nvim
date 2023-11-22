@@ -41,6 +41,14 @@ M.capabilities.textDocument.completion.completionItem = {
   },
 }
 
+local lspList = {
+  'pyright',
+}
+
+for i, v in ipairs(lspList) do
+  require('lspconfig')[v].setup({})
+end
+
 require("lspconfig").lua_ls.setup {
   on_attach = M.on_attach,
   capabilities = M.capabilities,

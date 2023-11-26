@@ -7,7 +7,7 @@ window:
   dynamic_title: false
 
 font:
-  size: 12
+  size: 17
   normal:
     family: M+1Code Nerd Font Mono
     style: Regular
@@ -17,11 +17,11 @@ font:
 
 import:
   # uncomment the flavour you want below:
-  - C:/Users/xp2/AppData/Roaming/alacritty/catppuccin/catppuccin-mocha.yml
+  - C:/Users/xp2/AppData/Roaming/alacritty/mountain.yml
+#  - C:/Users/xp2/AppData/Roaming/alacritty/catppuccin/catppuccin-mocha.yml
 #  - C:/Users/xp2/AppData/Roaming/alacritty/catppuccin/catppuccin-macchiato.yml
 #  - C:/Users/xp2/AppData/Roaming/alacritty/catppuccin/catppuccin-frappe.yml
 #  - C:/Users/xp2/AppData/Roaming/alacritty/catppuccin/catppuccin-latte.yml
-
 env:
   TERM: xterm-256color
 
@@ -29,4 +29,4 @@ shell:
   program: C:\Windows\System32\wsl.exe
 
 key_bindings:
-  - { key: Slash,   mods: Control,       chars: "\x1f"                 }
+  - { key: Slash, mods: Control, chars: "\x1f" }

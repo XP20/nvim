@@ -36,6 +36,12 @@ local default_plugins = {
   },
 
   {
+    'simrat39/rust-tools.nvim',
+    lazy = false,
+    config = true,
+  },
+
+  {
     "NvChad/base46",
     branch = "v2.0",
     build = function()

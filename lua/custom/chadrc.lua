@@ -1,16 +1,18 @@
 ---@type ChadrcConfig
 local M = {}
 
-local colors = require 'custom.catppuccin'
+local colors = require 'custom.mountain'
+-- local colors = require 'custom.catppuccin'
+
 -- local gen_block = require('statusline').gen_block
 
 M.ui = {
-    theme = 'catppuccin',
+    theme = 'mountain',
     hl_override = {
         IndentBlanklineChar = { fg = colors.line },             -- Foreground indent line color
         IndentBlanklineSpaceChar = { fg = colors.line },        -- Foregruond space character color
-        IndentBlanklineContextChar = { fg = colors.sun },      -- Foreground active indent line color
-        IndentBlanklineContextStart = { bg = colors.one_bg },   -- Foreground and background text of first context line
+        IndentBlanklineContextChar = { fg = colors.blue },      -- Foreground active indent line color
+        IndentBlanklineContextStart = { bg = colors.one_bg2 },  -- Foreground and background text of first context line
     },
     statusline = {
         theme = 'minimal',

@@ -70,6 +70,9 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 14
 
+-- Mouse scrolling speed
+vim.api.nvim_set_option('mousescroll', 'ver:1,hor:2')
+
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`

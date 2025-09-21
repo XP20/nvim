@@ -109,4 +109,29 @@ return {
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
   },
+  {
+    'mfussenegger/nvim-lint',
+
+    config = function()
+      require('lint').linters_by_ft = {
+        java = { 'checkstyle' },
+      }
+
+      vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
+        callback = function()
+          -- try_lint without arguments runs the linters defined in `linters_by_ft`
+          -- for the current filetype
+          require('lint').try_lint()
+        end,
+      })
+
+      local checkstyle = require('lint').linters.checkstyle
+      checkstyle.config_file = vim.env.HOME .. '/.config/checkstyle/style.xml'
+    end,
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+  },
 }

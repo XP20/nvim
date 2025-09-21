@@ -84,5 +84,12 @@ vim.o.scrolloff = 12
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- TODO: Undercurl
+vim.cmd([[let &t_Cs = "\e[4:3m"]])
+vim.cmd([[let &t_Ce = "\e[4:0m"]])
+
+-- TODO: Number and sign columns
+vim.o.signcolumn = 'number'
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

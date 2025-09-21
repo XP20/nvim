@@ -147,9 +147,21 @@ return { -- LSP Plugins
             [vim.diagnostic.severity.HINT] = 'H ',
           },
         },
-        virtual_text = {
-          source = 'if_many',
-          spacing = 2,
+        -- virtual_text = {
+        --   source = 'if_many',
+        --   spacing = 2,
+        --   format = function(diagnostic)
+        --     local diagnostic_message = {
+        --       [vim.diagnostic.severity.ERROR] = diagnostic.message,
+        --       [vim.diagnostic.severity.WARN] = diagnostic.message,
+        --       [vim.diagnostic.severity.INFO] = diagnostic.message,
+        --       [vim.diagnostic.severity.HINT] = diagnostic.message,
+        --     }
+        --     return diagnostic_message[diagnostic.severity]
+        --   end,
+        -- },
+        virtual_lines = {
+          current_line = true,
           format = function(diagnostic)
             local diagnostic_message = {
               [vim.diagnostic.severity.ERROR] = diagnostic.message,
@@ -272,7 +284,7 @@ return { -- LSP Plugins
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
+        python = { 'isort', 'black' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
@@ -381,6 +393,9 @@ return { -- LSP Plugins
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+    dependencies = {
+      -- { 'nvim-treesitter/nvim-treesitter-context', lazy = true },
+    },
     opts = {
       ensure_installed = {
         'bash',
